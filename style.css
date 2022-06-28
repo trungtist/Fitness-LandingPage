@@ -120,7 +120,7 @@ body::-webkit-scrollbar-thumb {
 
 .header,
 .footer {
-    padding: 24px 0
+    padding: 24px 0 15px
 }
 
 .header__logo img {
@@ -136,13 +136,56 @@ body::-webkit-scrollbar-thumb {
     -webkit-text-fill-color: transparent;
 }
 
-.header__menu  {
+.header__menu {
     padding-right: 10px;
 }
-.header__menu .menu__item {
+
+.menu__item {
     margin-right: 4rem;
+    opacity: .8;
     transition: .3s ease-in;
     font-weight: var(--fw-semiBold);
+}
+
+.menu__item-hover {
+    position: relative;
+}
+
+.menu__item-hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--second-color);
+    transform: scaleX(0);
+    transform-origin: bottom left;
+
+    transition: .3s transform;
+}
+
+.menu__item-hover:hover::after {
+    transform: scaleX(1);
+}
+
+.active {
+    color: var(--second-color);
+    opacity: 1;
+}
+
+.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--second-color);
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+    transition: .3s transform; 
 }
 
 .menu__item:hover {
@@ -155,7 +198,7 @@ body::-webkit-scrollbar-thumb {
 
 .main {
     text-align: center;
-    margin: 3rem 0 calc(3rem + 24px) 0
+    margin: 2rem 0 calc(2rem + 15px)
 }
 
 .main__title,
@@ -201,4 +244,53 @@ body::-webkit-scrollbar-thumb {
 .btn-secondary:hover {
     background-color: var(--default-color);
     color: var(--second-color);
+}
+
+.footer__social {
+    font-size: var(--smallest-fs);
+    font-weight: var(--fw-semiBold);
+}
+
+.footer__social>div,
+.pagination__number>div:nth-of-type(2) {
+    width: 60px;
+    height: 2px;
+    background-color: var(--second-color);
+    margin: 0 10px;
+    border-radius: 2px;
+}
+
+.footer__social .menu__item {
+    margin-right: 1rem;
+}
+
+.pagination__btn .btn {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    padding: 0;
+    text-align: center;
+    background-color: var(--default-color);
+    color: #000;
+}
+
+.btn-prev,
+.btn-next {
+    margin-right: 1rem;
+}
+
+.btn-prev i,
+.btn-next i {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
+.pagination__number {
+    font-weight: var(--fw-bold);
+}
+
+@keyframes hover {
+    
 }
