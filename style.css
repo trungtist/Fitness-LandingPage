@@ -6,7 +6,7 @@
     --default-ff: 'Montserrat', sans-serif;
     --second-ff: 'Poppins', sans-serif;
     --logo-ff: 'Rubik', sans-serif;
-    --default-fs: 18px;
+    --default-fs: 16px;
     --biggest-fs: 51px;
     --smallest-fs: 14px;
     --fw-bold: 700;
@@ -80,6 +80,18 @@ p {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    width: .25rem;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(#FFB904, #00C2FF);
+}
+
 .d-flex {
     display: flex;
     justify-content: center;
@@ -87,20 +99,21 @@ p {
 }
 
 .bg-container {
-    background-image: url(/assets/main-bg.jpg);
+    background-image: url('assets/main-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .header,
 .header__logo,
 .header__menu,
-.header__shopping {
+.header__shopping,
+.footer {
     justify-content: space-between;
     text-transform: var(--text-uppercase);
 }
@@ -116,13 +129,16 @@ p {
     margin-right: 6px;
 }
 
-.header p {
+.header__logo p {
     font-weight: var(--fw-extraBold);
     background: -webkit-linear-gradient(#FFB904, #00C2FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.header__menu  {
+    padding-right: 10px;
+}
 .header__menu .menu__item {
     margin-right: 4rem;
     transition: .3s ease-in;
@@ -133,17 +149,13 @@ p {
     color: var(--second-color)
 }
 
-.header__shopping .shopping__cart {
-    margin-right: 16px;
-}
-
-.header__shopping i {
+.header__shopping a {
     width: 35px;
 }
 
 .main {
     text-align: center;
-    margin: 3rem 0
+    margin: 3rem 0 calc(3rem + 24px) 0
 }
 
 .main__title,
@@ -164,7 +176,7 @@ p {
 }
 
 .btn {
-    width: 250px;
+    width: 150px;
     padding: 12px 0;
     border: solid 1px var(--default-color);
     text-transform: var(--text-uppercase);
