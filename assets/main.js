@@ -1,4 +1,3 @@
-
 $ = document.querySelector.bind(document)
 $$ = document.querySelectorAll.bind(document)
 
@@ -19,5 +18,3 @@ const activeMenu = () => {
     
 }
 activeMenu()
-
-// 
