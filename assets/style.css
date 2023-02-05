@@ -99,7 +99,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bg-container {
-    background-image: url('/assets/main-bg.jpg');
+    background-image: url('../assets/main-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 105vh;
